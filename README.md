@@ -12,5 +12,5 @@ angular-dpt
 1. `npm install`
 2. `bower install`
 
-## Start Serer
+## Start Server
 ` grunt serve `
