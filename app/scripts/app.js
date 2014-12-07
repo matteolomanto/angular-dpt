@@ -21,6 +21,9 @@ var app = angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
+        templateUrl: 'views/splash.html'
+      })
+      .when('/measurements', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })

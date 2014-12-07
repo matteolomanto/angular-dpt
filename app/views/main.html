@@ -1,2 +1,24 @@
 
-  {{ awesomeThings }}
+    <div ng-controller="MainCtrl">
+      <label for="">
+        Search for athlete:
+      </label><input type="text" ng-model="searchText"/>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Body Fat (%)</th>
+            <th>Chest</th>
+          </tr>
+        </thead>
+        <tr ng-repeat="person in clientResults | filter:searchText">
+          <td>{{ person.Date }}</td>
+          <td>{{ person.FirstName }}</td>
+          <td>{{ person.LastName}}</td>
+          <td>{{ person.BF | number:1 }} </td>
+          <td>{{ person.CH | number:1 }}</td>
+        </tr>
+      </table>
+    </div>

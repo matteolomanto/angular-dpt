@@ -1,0 +1,8 @@
+// Override BootStrap defaults
+.navbar-brand {
+  padding-top: 0;
+}
+
+.navbar-brand > img {
+  width: 170px;
+}
