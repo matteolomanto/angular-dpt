@@ -22,10 +22,7 @@
     <!-- Main Content Loaded Here -->
     <!-- Navigation -->
     <div ng-include="'views/nav.html'"></div>
-    <div class="container">
-      <!-- Each 'page' loaded in the ng-view below -->
-      <ng-view>This is where the view is loaded</ng-view>
-    </div>
+    <div class="container" ng-view=""></div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -77,6 +74,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/nav.js"></script>
+        <script src="scripts/controllers/register.js"></script>
         <!-- endbuild -->
 </body>
 </html>
