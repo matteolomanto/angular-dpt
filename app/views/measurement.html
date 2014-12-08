@@ -13,7 +13,7 @@
             <th>Chest</th>
           </tr>
         </thead>
-        <tr ng-repeat="person in clientResults | filter:searchText">
+        <tr ng-repeat="person in clientResults | filter:searchText | orderBy:'Date'">
           <td>{{ person.Date }}</td>
           <td>{{ person.FirstName }}</td>
           <td>{{ person.LastName}}</td>
