@@ -5728,7 +5728,7 @@ app.factory('ClientResults', function(){
 
 });
 
-app.controller('MainCtrl',
+app.controller('MeasurementCtrl',
   function ($scope, ClientResults) {
     $scope.clientResults = ClientResults;
   });
