@@ -5728,7 +5728,48 @@ app.factory('ClientResults', function(){
 
 });
 
-app.controller('MeasurementCtrl',
-  function ($scope, ClientResults) {
+app.controller('MeasurementCtrl', function ($scope, ClientResults) {
     $scope.clientResults = ClientResults;
-  });
+
+
+    $scope.chartBodyFatGauge = {
+      data: {
+        columns: [
+          ['body fat', 21.4]
+        ],
+        type: 'gauge',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+      },
+      color: {
+        pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+        threshold: {
+          values: [13, 20, 24, 31]
+        }
+      },
+      size: {
+        height: 180
+      }
+    };
+
+    $scope.chartBodyFatSpline = {
+      data: {
+        columns: [
+          ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+          ['data1', 15.6, 18, 20.1, 19, 18, 18.5]
+        ],
+        type: 'spline'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y-%m-%d'
+          }
+        }
+      }
+    };
+
+
+});
