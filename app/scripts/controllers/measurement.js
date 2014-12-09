@@ -5755,11 +5755,11 @@ app.controller('MeasurementCtrl', function ($scope, ClientResults) {
 
     $scope.chartBodyFatSpline = {
       data: {
+        x: 'x',
         columns: [
           ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
-          ['data1', 15.6, 18, 20.1, 19, 18, 18.5]
-        ],
-        type: 'spline'
+          ['body fat', 30, 200, 100, 400, 150, 250]
+        ]
       },
       axis: {
         x: {
@@ -5770,6 +5770,5 @@ app.controller('MeasurementCtrl', function ($scope, ClientResults) {
         }
       }
     };
-
 
 });
