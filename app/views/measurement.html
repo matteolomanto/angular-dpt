@@ -1,5 +1,11 @@
 
+
     <div ng-controller="MeasurementCtrl">
+
+      <h3>Client Charts</h3>
+      <c3-chart id="chart" config="chartBodyFatGauge"></c3-chart>
+      <c3-chart id="chart2" config="chartBodyFatSpline"></c3-chart>
+
       <label for="">
         Search for athlete:
       </label><input type="text" ng-model="searchText"/>
@@ -13,7 +19,7 @@
             <th>Chest</th>
           </tr>
         </thead>
-        <tr ng-repeat="person in clientResults | filter:searchText | orderBy:'Date'">
+        <tr ng-repeat="person in clientResults | filter:searchText | orderBy:'LastName'">
           <td>{{ person.Date }}</td>
           <td>{{ person.FirstName }}</td>
           <td>{{ person.LastName}}</td>
@@ -22,4 +28,6 @@
         </tr>
       </table>
       <button>Upload</button>
+
+
     </div>
