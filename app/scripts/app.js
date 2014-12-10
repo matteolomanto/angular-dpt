@@ -17,7 +17,8 @@ var app = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angular-c3'
+    'angular-c3',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
