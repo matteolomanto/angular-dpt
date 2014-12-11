@@ -10,7 +10,6 @@
 
 app.controller("LoginCtrl", ["$scope", "Auth", function($scope, Auth) {
   $scope.auth = Auth;
-  console.dir($scope.auth);
   $scope.user = $scope.auth.$getAuth();
 }]);
 

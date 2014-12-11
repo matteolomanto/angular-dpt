@@ -6,7 +6,11 @@
 app.controller("RegisterCtrl", ["$scope", "Auth", function($scope, Auth) {
 
   $scope.register = function() {
-    Auth.$createUser($scope.user.email, $scope.user.password).then(function(){
+
+    var email = $scope.user.email
+    var password = $scope.user.password;
+
+    Auth.$createUser(email, password).then(function(){
       console.log('user created successfully');
 
       // now that we've created a user, let's login with the username and password supplied

@@ -20,6 +20,7 @@ var app = angular
     'angular-c3',
     'firebase'
   ])
+  .constant('FIREBASE_URL', 'https://durbrow-performance.firebaseio.com/')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
