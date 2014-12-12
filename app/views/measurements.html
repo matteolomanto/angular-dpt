@@ -33,6 +33,11 @@
           <td>{{ person.CH | number:1 }}</td>
         </tr>
       </table>
+
+      <form ng-controller="UploadController">
+        <input type="file" ng-model="measurementData"/>
+        <button ng-click="upload()">Upload</button>
+      </form>
       <button ng-click="postFakeMeasurement()">Click here to fake upload data</button>
 
 

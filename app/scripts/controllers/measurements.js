@@ -2393,3 +2393,20 @@ app.controller('MeasurementsCtrl', function ($scope, ClientResults, Measurement)
     };
 
 });
+
+app.controller('UploadController', function($scope) {
+  $scope.upload = function(evt) {
+
+    var file = evt.target.files();
+    // Check for the various File API support.
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      // Great success! All the File APIs are supported.
+      console.log("Great success! All File API's supported.");
+
+      var file = evt.target.files();
+      console.log(file);
+    } else {
+      alert('The File APIs are not fully supported in this browser.');
+    }
+  }
+});
