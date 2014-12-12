@@ -18,7 +18,7 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         #31C0BE !default;
+$brand-primary:         #ff371c !default;
 $brand-success:         #60CD9B !default;
 $brand-info:            #66B5D7 !default;
 $brand-info-alt:        #8170CA !default;
@@ -31,7 +31,7 @@ $color-violet:          $brand-info-alt;
 // $skin-darker:           #
 // $skin-dark:             #;
 $skin:                  $brand-primary;
-$skin-light:            #5BDDDC;
+$skin-light:            #ff371c;
 // $skin-lighter:          #
 // $skin-bright:           #
 $dark:                  #242633;
@@ -39,8 +39,8 @@ $bright:                #fafafa;
 $reverse:               #fff;
 
 $state-default-bg:              #f6f6f6; // also: pagination bg
-$state-default-border:          darken(adjust-hue($state-default-bg, -10), 5%); 
-$state-default-border-light:    #f3f3f3; 
+$state-default-border:          darken(adjust-hue($state-default-bg, -10), 5%);
+$state-default-border-light:    #f3f3f3;
 
 
 //== Scaffolding
