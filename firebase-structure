@@ -1,0 +1,46 @@
+{
+	users: {
+		user1: {
+			firstName: "Dan",
+			lastName: "Lourenco"
+			height: "5'11" (convert to inches in app);
+			weight: "175"
+		},
+		user2: {
+			firstName: "Laura",
+			lastName: "Vecchio"
+			"height": ""
+			"weight": ""
+		},
+},
+	measurements: {
+		measurement1: {
+			date: "7/4/2014",
+			bodyFat: "22.3",
+			thigh: "99",
+			scapular: "99",
+			chest: "99",
+			waist: "14.3",
+			tricep: "11.8",
+			hip: "8.3",
+			axle: "99",
+			belongsTo: "user1"
+		},
+		measurement2: {
+			date: "7/4/2014",
+			bodyFat: "25.3",
+			thigh: "88",
+			scapular: "88",
+			chest: "88",
+			waist: "14.3",
+			tricep: "11.8",
+			hip: "8.3",
+			axle: "88",
+			belongsTo: "user2"
+		}
+	},
+
+}
+
+
+mandrill/sendgrid
