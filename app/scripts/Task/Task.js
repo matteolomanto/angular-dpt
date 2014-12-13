@@ -3,7 +3,7 @@
   angular.module('app.task', []).factory('taskStorage', function() {
     var DEMO_TASKS, STORAGE_ID;
     STORAGE_ID = 'tasks';
-    DEMO_TASKS = '[ {"title": "Finish homework", "completed": true}, {"title": "Make a call", "completed": true}, {"title": "Build a snowman!", "completed": false}, {"title": "Tango! Tango! Tango!", "completed": false}, {"title": "Play games with friends", "completed": false}, {"title": "Shopping", "completed": false}, {"title": "One more dance", "completed": false}, {"title": "Try Google glass", "completed": false} ]';
+    DEMO_TASKS = '[ {"title": "Track food", "completed": true}, {"title": "Get measured", "completed": true}, {"title": "Talk to Callie about Spartan Race", "completed": false}, {"title": "Sign up for conditioning class", "completed": false}, {"title": "Invite friends to charity workout", "completed": false}, {"title": "Sign up for class", "completed": false}, {"title": "Do a handstand push-up", "completed": false}, {"title": "Do a chin-up with no bands", "completed": false} ]';
     return {
       get: function() {
         return JSON.parse(localStorage.getItem(STORAGE_ID) || DEMO_TASKS);

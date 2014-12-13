@@ -56,6 +56,8 @@
         templateUrl: 'views/mail/single.html'
       }).when('/pages/features', {
         templateUrl: 'views/pages/features.html'
+      }).when('/pages/measurements', {
+        templateUrl: 'views/pages/measurements.html'
       }).when('/pages/signin', {
         templateUrl: 'views/pages/signin.html'
       }).when('/pages/signup', {
@@ -80,8 +82,8 @@
         templateUrl: 'views/pages/about.html'
       }).when('/pages/contact', {
         templateUrl: 'views/pages/contact.html'
-      }).when('/tasks', {
-        templateUrl: 'views/tasks/tasks.html'
+      }).when('/goals', {
+        templateUrl: 'views/goals/goals.html'
       }).otherwise({
         redirectTo: '/404'
       });
