@@ -14,3 +14,7 @@ angular-dpt
 
 ## Start Server
 ` grunt serve `
+
+## Todo:
+
+Checkout Nicholas Zakas' Scalable Javascript Application Architecture
