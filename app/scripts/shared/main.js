@@ -9,7 +9,7 @@
       };
       return $scope.main = {
         brand: 'DPT Athletics',
-        name: 'DPT Athletics'
+        name: 'Laura Vecchio'
       };
     }
   ]).controller('NavCtrl', [
