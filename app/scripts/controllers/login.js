@@ -12,4 +12,3 @@ app.controller("LoginCtrl", ["$scope", "Auth", function($scope, Auth) {
   $scope.auth = Auth;
   $scope.user = $scope.auth.$getAuth();
 }]);
-
