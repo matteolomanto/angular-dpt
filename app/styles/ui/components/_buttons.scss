@@ -2,7 +2,7 @@
 // mixin
 @mixin button-line-variant($color, $background, $border) {
     color: $text-color;
-    background-color: transparent; 
+    background-color: transparent;
     border-color: $border;
 
     &:hover,
@@ -23,7 +23,7 @@
 @mixin button-icon-variant($size) {
     height: $size;
     width: $size;
-    line-height: $size;    
+    line-height: $size;
 }
 
 @mixin social-button-variant($background, $border) {
@@ -33,8 +33,8 @@
     &:hover {
         color: $reverse;
         background-color: darken($background, 8%);
-        border-color: darken($border, 12%)        
-    }    
+        border-color: darken($border, 12%)
+    }
 }
 
 // add to default button
@@ -68,7 +68,7 @@
     @include button-line-variant($btn-dark-color, $btn-dark-bg, $btn-dark-border);
 }
 
-// 
+//
 .btn-direction {
     position: relative;
     border: 0;
@@ -227,7 +227,7 @@ $btn_arrow_width:     8px;
         &:before {
             border-bottom: $btn_arrow_width solid darken($btn-default-bg, 8%);
         }
-    }  
+    }
 
     // Color
     &.btn-primary {
@@ -279,7 +279,7 @@ $btn_arrow_width:     8px;
                 border-bottom: $btn_arrow_width solid darken($btn-danger-bg, 8%);
             }
         }
-    }  
+    }
 }
 .btn-down {
     &:before {
@@ -296,7 +296,7 @@ $btn_arrow_width:     8px;
         &:before {
             border-top: $btn_arrow_width solid darken($btn-default-bg, 8%);
         }
-    }  
+    }
 
     // Color
     &.btn-primary {
@@ -348,7 +348,7 @@ $btn_arrow_width:     8px;
                 border-top: $btn_arrow_width solid darken($btn-danger-bg, 8%);
             }
         }
-    }  
+    }
 }
 
 //
@@ -357,13 +357,13 @@ $btn_arrow_width:     8px;
 .btn-w-md { min-width: 120px; }
 .btn-w-lg { min-width: 150px; }
 
-// 
+//
 .btn-round { border-radius: 25px; }
 .btn-gap { margin: 5px; }
 .btn-gap-h { margin: 0 5px; }
 .btn-gap-v { margin: 0 0 5px; }
 
-// 
+//
 .btn-icon {
     display: inline-block;
     text-align: center;
@@ -423,7 +423,41 @@ $btn_arrow_width:     8px;
 
     span {
         position: absolute;
-        left: 15px;
+        left: 47px;
         bottom: 15px;
     }
+
+    &.orange {
+      background-color: $color-orange;
+      color: #FFFFFF;
+    }
+
+    &.dark-gray {
+      background-color: $color-dark-gray;
+      color: #FFFFFF;
+    }
+
+    &.light-gray {
+      background-color: $color-gray;
+      color: #FFFFFF;
+    }
+
+    &.teal {
+      background-color: $color-teal;
+      color: #FFFFFF;
+    }
+
+    &.white {
+      background-color: $color-white;
+      color: #000000;
+    }
+}
+
+// Dashboard quick links
+.btn-quick-links {
+
+  width: 100%;
+  font-family: "Dosis";
+
+
 }

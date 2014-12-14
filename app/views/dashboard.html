@@ -1,15 +1,119 @@
 <div class="page page-dashboard" data-ng-controller="DashboardCtrl">
 
-    <!-- begin: header row -->
+    <!-- begin: quick links-->
     <div class="row">
+        <div class="panel panel-default">
+        <div class="panel-heading"><span class="glyphicon glyphicon-th"></span> Quick Links</div>
+        <div class="panel-body">
 
+          <div class="col-lg-2 col-md-4 col-sm-12">
+            <a href="javascript:;" class="btn btn-metro btn-quick-links orange">
+              <i class="fa fa-calendar"></i>
+              <span>View Schedule</span>
+            </a>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-sm-12">
+            <a href="javascript:;" class="btn btn-metro btn-quick-links dark-gray">
+              <i class="fa fa-calendar"></i>
+              <span>Track Workout</span>
+            </a>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-sm-12">
+            <a href="javascript:;" class="btn btn-metro btn-quick-links teal">
+              <i class="fa fa-male"></i>
+              <span>Get Measured</span>
+            </a>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-sm-12">
+            <a href="javascript:;" class="btn btn-metro btn-quick-links light-gray">
+              <i class="fa fa-pie-chart"></i>
+              <span>Track Nutrition</span>
+            </a>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-sm-12">
+            <a href="javascript:;" class="btn btn-metro btn-quick-links teal">
+              <i class="fa fa-question"></i>
+              <span>Ask The Trainer</span>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12">
+            <a href="javascript:;" class="btn btn-metro btn-quick-links orange">
+              <i class="fa fa-star"></i>
+              <span>Complete Goal</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- end: header row -->
+    <!-- end: quick links -->
+
+
+    <div class="row stat-container">
+      <div class="col-sm-4">
+        <section class="stat-item">
+          <span class="stat-num">250</span>
+          <span class="stat-desc">Calories burned today</span>
+        </section>
+      </div>
+      <div class="col-sm-4">
+        <section class="stat-item">
+          <span class="stat-num">11</span>
+          <span class="stat-desc">Workouts this month</span>
+        </section>
+      </div>
+      <div class="col-sm-4">
+        <section class="stat-item">
+          <span class="stat-num">26</span>
+          <span class="stat-desc">Goals completed this year</span>
+        </section>
+      </div>
+    </div>
 
     <div class="row">
 
       <div class="col-lg-8 col-xsm-12">
-      1
+
+        <section class="panel panel-default">
+          <div class="panel-heading">
+            <span class="glyphicon glyphicon-th"></span> Durbrow Updates
+          </div>
+          <div class="panel-body">
+            <div class="divider"></div>
+            <tabset justified="true" class="ui-tab">
+              <tab heading="News">
+                <article class="service-item clearfix">
+                  <a href="javascript:;" class="service-icon btn btn-info btn-metro teal"><i class="fa fa-newspaper-o"></i></a>
+                  <div class="servie-desc">
+                    <h4>Client of the Month</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, voluptatibus, non nobis reprehenderit accusantium dolorem possimus at sed quidem maiores officiis dignissimos quis amet aut dolor recusandae nihil! Aperiam, fugiat.</p>
+                  </div>
+                </article>
+
+                <article class="service-item clearfix">
+                  <a href="javascript:;" class="service-icon btn btn-info btn-metro teal"><i class="fa fa-newspaper-o"></i></a>
+                  <div class="servie-desc">
+                    <h4>Holiday Hours</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, voluptatibus, non nobis reprehenderit accusantium dolorem possimus at sed quidem maiores officiis dignissimos quis amet aut dolor recusandae nihil! Aperiam, fugiat.</p>
+                  </div>
+                </article>
+
+              </tab>
+              <tab heading="Upcoming Events">
+
+                Upcoming Events
+
+              </tab>
+              <tab heading="Leaderboard">
+                Leaderboard
+              </tab>
+            </tabset>
+          </div>
+        </section>
+
       </div>
       <div class="col-lg-4 col-xsm-12">
 
@@ -19,19 +123,19 @@
               <span class="glyphicon glyphicon-th"></span> My Body
             </div>
             <div class="panel-body">
-              <c3-chart id="chart" config="chartBodyFatGauge"></c3-chart>
+              <highchart id="chartPoundsOfFat" config="chartPoundsOfFat"></highchart>
             </div>
           </section>
           <!-- begin: my body widget -->
 
           <!-- begin: my workout widget -->
-          <section class="panel panel-default">
+          <section class="panel panel-default" data-ng-controller="ExercisesCtrl">
             <div class="panel-heading">
               <span class="glyphicon glyphicon-th"></span> My Workouts
             </div>
             <div class="panel-body">
-              Pie chart of pounds of fat vs. muscle
-              Current body fat
+              No workouts scheduled for today.
+              <button>Sign up now</button>
             </div>
           </section>
           <!-- begin: my workouts widget -->
@@ -42,8 +146,6 @@
               <span class="glyphicon glyphicon-th"></span> My Goals
             </div>
             <div class="panel-body">
-              Pie chart of pounds of fat vs. muscle
-              Current body fat
             </div>
           </section>
           <!-- begin: my goals widget -->

@@ -77,7 +77,7 @@ $link_active_bg:        $brand-primary;
         }
         &.active {
             > a {
-                background-color: $link_active_bg;
+                background-color: $color-orange;
                 color: $bright;
             }
             > .fa { color: $bright; }

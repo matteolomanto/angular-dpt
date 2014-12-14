@@ -18,17 +18,20 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         #CA3434 !default;
+$brand-primary:         #FF3F40 !default;
 $brand-success:         #60CD9B !default;
 $brand-info:            #66B5D7 !default;
 $brand-info-alt:        #8170CA !default;
 $brand-warning:         #EEC95A !default;
 $brand-danger:          #E87352 !default;
 
+
+// theme colors
 $color-orange:          #FF3F40;
-$color-teal:            #2BB29D;
+$color-teal:            #2BDCCD;
 $color-gray:            #33363C;
 $color-dark-gray:       #22262B;
+$color-white:           #FFFFFF;
 $color-violet:          $brand-info-alt;
 
 // $skin-darker:           #

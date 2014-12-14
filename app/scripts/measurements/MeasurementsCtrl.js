@@ -1,27 +1,44 @@
 (function() {
   'use strict';
-  angular.module('app.chart.ctrls', ['angular-c3']).controller('chartCtrl', [
+  angular.module('app.measurements.ctrls', ['highcharts-ng']).controller('MeasurementsCtrl', [
     '$scope', function($scope) {
-      return $scope.chartBodyFatGauge = {
-        data: {
-          columns: [
-            ['body fat', 21.4]
-          ],
-          type: 'gauge',
-          onclick: function (d, i) { console.log("onclick", d, i); },
-          onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-          onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+
+
+      return $scope.chartPoundsOfFat = {
+
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: 1,//null,
+          plotShadow: false
         },
-        color: {
-          pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
-          threshold: {
-            values: [13, 20, 24, 31]
+        title: {
+          text: 'Fat vs. Muscle'
+        },
+        tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+              enabled: true,
+              format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
           }
         },
-        size: {
-          height: 180
-        }
+        series: [{
+          type: 'pie',
+          data: [
+            ['Fat', 24.5],
+            ['Muscle', 15.5],
+            ['Water', 60]
+          ]
+        }]
+
       };
+
+
     }
   ]);
 

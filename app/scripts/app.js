@@ -1,6 +1,27 @@
 (function() {
   'use strict';
-  angular.module('app', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'easypiechart', 'mgo-angular-wizard', 'textAngular', 'ui.tree', 'ngMap', 'ngTagsInput', 'app.ui.ctrls', 'app.ui.directives', 'app.ui.services', 'app.controllers', 'app.directives', 'app.form.validation', 'app.ui.form.ctrls', 'app.ui.form.directives', 'app.tables', 'app.map', 'app.task', 'app.localization', 'app.chart.ctrls', 'app.measurements.ctrls', 'app.chart.directives', 'app.page.ctrls']).config([
+  angular.module('app', [
+    'ngRoute',
+    'ngAnimate',
+    'ui.bootstrap',
+    'mgo-angular-wizard',
+    'textAngular',
+    'ui.tree',
+    'ngMap',
+    'ngTagsInput',
+    'app.ui.ctrls',
+    'app.ui.directives',
+    'app.ui.services',
+    'app.controllers',
+    'app.directives',
+    'app.form.validation',
+    'app.ui.form.ctrls',
+    'app.ui.form.directives',
+    'app.task',
+    'app.measurements.ctrls',
+    'app.exercises.ctrls',
+    'app.page.ctrls'
+  ]).config([
     '$routeProvider', function($routeProvider) {
       return $routeProvider.when('/', {
         redirectTo: '/pages/signin'
