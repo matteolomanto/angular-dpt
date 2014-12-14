@@ -1,4 +1,4 @@
-$nav_bg:                $dark;
+$nav_bg:                #000;
 $nav_border:            darken($nav_bg, 10%);
 $sub_nav_bg:            $nav_bg;
 $link_color:            $text-color;
@@ -51,7 +51,9 @@ $link_active_bg:        $brand-primary;
     }
 
     a {
-        font-size: 13px;
+        font-family: "Roboto";
+        font-size: 15px;
+        text-transform: uppercase;
         color: $link_color;
         @include transition(all .2s ease-in-out);
         &:hover {

@@ -27,6 +27,7 @@
     // !important, avoid flikering for all pages.
     // @include transition(left .25s ease-in-out);
     @include transition(none);
+
 }
 
 // for special page, like 404, sign in, sign up

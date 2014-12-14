@@ -2,6 +2,34 @@
   'use strict';
   angular.module('app.chart.ctrls', []).controller('chartCtrl', [
     '$scope', function($scope) {
+      $scope.workoutpercentage = {
+        percent: 68,
+        options: {
+          animate: {
+            duration: 1000,
+            enabled: true
+          },
+          barColor: '#CA3434',
+          lineCap: 'square',
+          size: 180,
+          lineWidth: 20,
+          scaleLength: 0
+        }
+      };
+      $scope.goalscompleted = {
+        percent: 25,
+        options: {
+          animate: {
+            duration: 1000,
+            enabled: true
+          },
+          barColor: '#CA3434',
+          lineCap: 'square',
+          size: 180,
+          lineWidth: 20,
+          scaleLength: 0
+        }
+      };
       $scope.easypiechart = {
         percent: 65,
         options: {
@@ -83,6 +111,29 @@
           limitMax: 'true',
           colorStart: '#7ACBEE',
           colorStop: '#7ACBEE',
+          strokeColor: '#F1F1F1',
+          generateGradient: true,
+          percentColors: [[0.0, '#66B5D7'], [1.0, '#66B5D7']]
+        }
+      };
+      $scope.currentBodyFat = {
+        data: {
+          maxValue: 100,
+          animationSpeed: 45,
+          val: 25
+        },
+        options: {
+          lines: 12,
+          angle: 0,
+          lineWidth: 0.47,
+          pointer: {
+            length: 0.6,
+            strokeWidth: 0.03,
+            color: '#464646'
+          },
+          limitMax: 'true',
+          colorStart: '#CA3434',
+          colorStop: '#CA3434',
           strokeColor: '#F1F1F1',
           generateGradient: true,
           percentColors: [[0.0, '#66B5D7'], [1.0, '#66B5D7']]
@@ -186,34 +237,92 @@
       $scope.comboData = [
         {
           year: '2008',
-          a: 20,
-          b: 16,
-          c: 12
+          workouts: 40,
+          measurements: 1
         }, {
           year: '2009',
-          a: 10,
-          b: 22,
-          c: 30
+          workouts: 95,
+          measurements: 2
         }, {
           year: '2010',
-          a: 5,
-          b: 14,
-          c: 20
+          workouts: 120,
+          measurements: 4
         }, {
           year: '2011',
-          a: 5,
-          b: 12,
-          c: 19
+          workouts: 130,
+          measurements: 5
         }, {
           year: '2012',
-          a: 20,
-          b: 19,
-          c: 13
+          workouts: 122,
+          measurements: 4
         }, {
           year: '2013',
-          a: 28,
-          b: 22,
-          c: 20
+          workouts: 90,
+          measurements: 4
+        }
+      ];
+      $scope.yearlyWorkouts = [
+        {
+          month: '2014-01',
+          workouts: 10
+        }, {
+          month: '2014-02',
+          workouts: 15
+        }, {
+          month: '2014-03',
+          workouts: 12
+        }, {
+          month: '2014-04',
+          workouts: 16
+        }, {
+          month: '2014-05',
+          workouts: 11
+        }, {
+          month: '2014-06',
+          workouts: 10
+        }
+      ];
+      $scope.yearlyMeasurements = [
+        {
+          date: '2014-01',
+          bodyfat: 26.8
+        }, {
+          date: '2014-03',
+          bodyfat: 27.2
+        }, {
+          date: '2014-06',
+          bodyfat: 24.3
+        }, {
+          date: '2014-08',
+          bodyfat: 23.7
+        }, {
+          date: '2014-10',
+          bodyfat: 22
+        }, {
+          date: '2014-12',
+          bodyfat: 21.5
+        }
+      ];
+      $scope.yearlyCircumferenceMeasurements = [
+        {
+          date: '2014-01',
+
+          bodyfat: 26.8
+        }, {
+          date: '2014-03',
+          bodyfat: 27.2
+        }, {
+          date: '2014-06',
+          bodyfat: 24.3
+        }, {
+          date: '2014-08',
+          bodyfat: 23.7
+        }, {
+          date: '2014-10',
+          bodyfat: 22
+        }, {
+          date: '2014-12',
+          bodyfat: 21.5
         }
       ];
       return $scope.donutData = [

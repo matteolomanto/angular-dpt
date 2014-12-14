@@ -2,9 +2,16 @@
 .panel {
     .panel-heading {
         text-transform: uppercase;
+        font-family: $font-family-durbrow;
+        background-color: #FFF;
+        border: none;
     }
     .panel-title {
         font-size: $font-size-base;
+    }
+
+    .glyphicon {
+      color: $color-orange;
     }
 }
 
@@ -127,7 +134,7 @@
     }
 }
 
-// 
+//
 .panel-profile {
     border: none;
 
