@@ -10,7 +10,6 @@ app.factory('Auth', ['$firebaseAuth', function($firebaseAuth){
   var Auth = {
     register:function () {
 
-      // stub
     },
 
     login: function (loginObj) {
