@@ -19,8 +19,16 @@ app.factory('Auth', ['$firebaseAuth', '$rootScope', function($firebaseAuth, $roo
       });
     },
 
+    logout: function() {
+      return authObject.$unauth();
+    },
+
     resolveUser: function() {
       return authObject.$getAuth();
+    },
+
+    signedIn: function() {
+      return !!Auth.user.provider;
     },
 
     createProfile: function(user) {
@@ -38,13 +46,14 @@ app.factory('Auth', ['$firebaseAuth', '$rootScope', function($firebaseAuth, $roo
   authObject.$onAuth(function(authData) {
     console.log('services/auth: $onAuth');
     console.log(authData);
+
     // user is logged in -- let's copy info to the user object
     if (authData) {
       // copy user into Auth.user
       console.log('there\'s authData available: user is logged in');
       angular.copy(authData, Auth.user);
       console.dir(Auth.user);
-
+      console.dir(Auth);
     } else {
       console.log('authData not available: user is logged out');
       angular.copy({}, Auth.user);
