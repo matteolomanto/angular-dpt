@@ -8,8 +8,8 @@ app.factory('Auth', ['$firebaseAuth', function($firebaseAuth){
 
 
   var Auth = {
-    register:function () {
-
+    register: function (loginObj) {
+     return authObject.$createUser(loginObj.email, loginObj.password);
     },
 
     login: function (loginObj) {
