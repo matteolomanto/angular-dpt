@@ -21,6 +21,7 @@ app.controller("AuthCtrl", ["$scope", "$location", "Auth", "user", function($sco
     Auth.login(loginObj).then(function(authData){
       console.log("Logged in as:", authData.uid);
       console.log("Redirecting to index");
+      console.dir(authData);
       $location.path('/');
     }, function(error){
       $scope.error = error.toString();
