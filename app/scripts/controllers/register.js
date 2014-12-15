@@ -3,12 +3,9 @@
  */
 'use strict';
 
-app.controller("RegisterCtrl", ["$scope", "Auth", function($scope, Auth) {
+app.controller("RegisterCtrl", ["$scope", "Auth", "$location", function($scope, Auth, $location) {
 
   $scope.register = function() {
-
-    var email = $scope.user.email
-    var password = $scope.user.password;
 
     Auth.$createUser(email, password).then(function(){
       console.log('user created successfully');
@@ -21,6 +18,8 @@ app.controller("RegisterCtrl", ["$scope", "Auth", function($scope, Auth) {
 
     }).then(function(authData) {
       console.log("logged in as: ", authData.uid);
+      console.log('Redirecting to measurements page');
+      $location.path('/measurements');
     }).catch(function(error){
       console.error("Error: ", error);
     });

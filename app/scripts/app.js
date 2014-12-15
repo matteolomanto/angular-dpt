@@ -32,7 +32,12 @@ var app = angular
       })
       .when('/login', {
         templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
+        controller: 'AuthCtrl',
+        resolve: {
+          user: function(Auth) {
+            return Auth.resolveUser();
+          }
+        }
       })
       .when('/register', {
         templateUrl: 'views/register.html',

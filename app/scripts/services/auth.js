@@ -4,5 +4,27 @@
  */
 app.factory('Auth', ['$firebaseAuth', function($firebaseAuth){
   var ref = new Firebase('https://durbrow-performance.firebaseio.com');
-  return $firebaseAuth(ref);
+  var authObject = $firebaseAuth(ref);
+
+
+  var Auth = {
+    register:function () {
+
+      // stub
+    },
+
+    login: function (loginObj) {
+      return authObject.$authWithPassword({
+        email: loginObj.email,
+        password: loginObj.password
+      });
+    },
+
+    resolveUser: function() {
+      return authObject.$getAuth();
+    }
+  };
+
+  return Auth;
+
 }]);
