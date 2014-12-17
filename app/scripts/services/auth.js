@@ -2,20 +2,22 @@
 /**
  * Created by a545703 on 12/10/14.
  */
-app.factory('Auth', ['$firebaseAuth', '$rootScope', function($firebaseAuth, $rootScope){
+app.factory('Auth', ['$firebase', '$firebaseAuth', '$rootScope', function($firebase, $firebaseAuth, $rootScope){
   var ref = new Firebase('https://durbrow-performance.firebaseio.com');
   var authObject = $firebaseAuth(ref);
 
 
   var Auth = {
-    register: function (loginObj) {
-     return authObject.$createUser(loginObj.email, loginObj.password);
+    register: function (user) {
+      console.log('auth.register - user: ');
+      console.log(user);
+     return authObject.$createUser(user.email, user.password);
     },
 
-    login: function (loginObj) {
+    login: function (user) {
       return authObject.$authWithPassword({
-        email: loginObj.email,
-        password: loginObj.password
+        email: user.email,
+        password: user.password
       });
     },
 
@@ -32,12 +34,14 @@ app.factory('Auth', ['$firebaseAuth', '$rootScope', function($firebaseAuth, $roo
     },
 
     createProfile: function(user) {
+      console.log("createProfile");
+      console.log(user);
       var profile = {
-        userEmail: user.email,
-        md5_hash: user.md5_hash
+        userEmail: user.password.email
       };
 
       var profileRef = $firebase(ref.child('profile'));
+      console.log(user);
       return profileRef.$set(user.uid, profile);
     },
     user: {}
@@ -52,8 +56,7 @@ app.factory('Auth', ['$firebaseAuth', '$rootScope', function($firebaseAuth, $roo
       // copy user into Auth.user
       console.log('there\'s authData available: user is logged in');
       angular.copy(authData, Auth.user);
-      console.dir(Auth.user);
-      console.dir(Auth);
+
     } else {
       console.log('authData not available: user is logged out');
       angular.copy({}, Auth.user);

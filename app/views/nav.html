@@ -15,17 +15,17 @@
           <!--{{ currentUser.username }}-->
         <!--</a>-->
       <!--</li>-->
-      <li ng-show="signedIn()">
-        <a href="#" ng-click="logout()">Logout</a>
-      </li>
       <li ng-hide="signedIn()">
         <a href="#/login">Login</a>
       </li>
       <li ng-hide="signedIn()">
         <a href="#/register">Register</a>
       </li>
-      <li ng-hide="signedIn()">
+      <li ng-show="signedIn()">
         <a href="#/measurements">Measurements</a>
+      </li>
+      <li ng-show="signedIn()">
+        <a href="#" ng-click="logout()">Logout</a>
       </li>
     </ul>
   </div>

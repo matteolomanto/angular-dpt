@@ -17,6 +17,7 @@ app.controller("RegisterCtrl", ["$scope", "Auth", "$location", function($scope, 
       });
 
     }).then(function(authData) {
+
       console.log("logged in as: ", authData.uid);
       console.log('Redirecting to measurements page');
       $location.path('/measurements');

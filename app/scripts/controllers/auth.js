@@ -12,36 +12,37 @@ app.controller("AuthCtrl", ["$scope", "$location", "Auth", "user", function($sco
 
   $scope.login = function(loginObj) {
 
-    var loginObj = {
-      email: $scope.user.email,
-      password: $scope.user.password
-    };
-
     // call login method on Auth service and then redirect
-    Auth.login(loginObj).then(function(authData){
+    Auth.login($scope.user).then(function(authData){
       console.log("Logged in as:", authData.uid);
-      console.log("Redirecting to index");
-      console.dir(authData);
       $location.path('/');
     }, function(error){
       $scope.error = error.toString();
     });
   };
 
-  $scope.register = function(loginObj) {
+  $scope.register = function() {
 
-    var loginObj = {
-      email: $scope.user.email,
-      password: $scope.user.password
-    };
-
-    Auth.register(loginObj).then(function() {
-      console.log('user created successfully');
-      return Auth.login(loginObj).then(function() {
-        console.log('automatically logged in after registering');
-      });
-    }, function(error) {
+    Auth.register($scope.user).then(function() {
+      // login here
+    }).then(function(authData) {
+      console.log(authData);
+    }).catch(function(error) {
       $scope.error = error.toString();
+      console.log(error);
     });
   };
+
 }]);
+
+
+//
+
+//$scope.authObj.$createUser("my@email.com", "mypassword").then(function() {
+//  console.log("User created successfully!");
+//
+//}).then(function(authData) {
+//  console.log("Logged in as:", authData.uid);
+//}).catch(function(error) {
+//  console.error("Error: ", error);
+//});
