@@ -1,0 +1,44 @@
+
+
+    <div ng-controller="MeasurementsCtrl">
+
+      <h3>Client Charts</h3>
+
+      <p>Current Body Fat (Client):</p>
+      <c3-chart id="chart" config="chartBodyFatGauge"></c3-chart> <br />
+
+      <p>Body Fat Trends (Client):</p>
+      <c3-chart id="chart2" config="chartBodyFatSpline"></c3-chart> <br />
+
+
+
+      <label for="">
+        Search for athlete:
+      </label><input type="text" ng-model="searchText"/>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Body Fat (%)</th>
+            <th>Chest</th>
+          </tr>
+        </thead>
+        <tr ng-repeat="person in clientResults | filter:searchText | orderBy:'LastName'">
+          <td>{{ person.Date }}</td>
+          <td>{{ person.FirstName }}</td>
+          <td>{{ person.LastName}}</td>
+          <td>{{ person.BF | number:1 }} </td>
+          <td>{{ person.CH | number:1 }}</td>
+        </tr>
+      </table>
+
+      <form ng-controller="UploadController">
+        <input type="file" ng-model="measurementData"/>
+        <button ng-click="upload()">Upload</button>
+      </form>
+      <button ng-click="postFakeMeasurement()">Click here to fake upload data</button>
+
+
+    </div>

@@ -27,8 +27,8 @@ var app = angular
         templateUrl: 'views/splash.html'
       })
       .when('/measurements', {
-        templateUrl: '../views/measurements.html',
-        controller: 'MeasurementsCtrl'
+        templateUrl: 'views/measurements.html',
+        controller: 'MeasurementController'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
