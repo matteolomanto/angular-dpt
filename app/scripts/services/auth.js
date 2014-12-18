@@ -9,9 +9,7 @@ app.factory('Auth', ['$firebase', '$firebaseAuth', '$rootScope', function($fireb
 
   var Auth = {
     register: function (user) {
-      console.log('auth.register - user: ');
-      console.log(user);
-     return authObject.$createUser(user.email, user.password);
+      return authObject.$createUser(user.email, user.password);
     },
 
     login: function (user) {
@@ -49,17 +47,21 @@ app.factory('Auth', ['$firebase', '$firebaseAuth', '$rootScope', function($fireb
 
   authObject.$onAuth(function(authData) {
     console.log('services/auth: $onAuth');
-    console.log(authData);
 
     // user is logged in -- let's copy info to the user object
     if (authData) {
-      // copy user into Auth.user
-      console.log('there\'s authData available: user is logged in');
+      console.log('authData available: user is logged in');
       angular.copy(authData, Auth.user);
-
+      Auth.user.profile = $firebase(ref.child('profile').child(Auth.user.uid)).$asObject();
+      console.log(Auth.user);
     } else {
+
+      if(Auth.user && Auth.user.profile) {
+        Auth.user.profile.$destroy();
+      }
       console.log('authData not available: user is logged out');
       angular.copy({}, Auth.user);
+
     }
 
   });

@@ -16,6 +16,7 @@ app.controller("AuthCtrl", ["$scope", "$location", "Auth", "user", function($sco
     Auth.login($scope.user).then(function(authData){
       console.log("Logged in as:", authData.uid);
       $location.path('/');
+
     }, function(error){
       $scope.error = error.toString();
     });
@@ -24,25 +25,16 @@ app.controller("AuthCtrl", ["$scope", "$location", "Auth", "user", function($sco
   $scope.register = function() {
 
     Auth.register($scope.user).then(function() {
-      // login here
+      console.log("User created successfully!");
+      return Auth.login($scope.user); // log our user in now
+
     }).then(function(authData) {
-      console.log(authData);
+      console.log("Logged in as: " + authData.uid);
+      $location.path('/measurements');
+
     }).catch(function(error) {
       $scope.error = error.toString();
-      console.log(error);
     });
   };
 
 }]);
-
-
-//
-
-//$scope.authObj.$createUser("my@email.com", "mypassword").then(function() {
-//  console.log("User created successfully!");
-//
-//}).then(function(authData) {
-//  console.log("Logged in as:", authData.uid);
-//}).catch(function(error) {
-//  console.error("Error: ", error);
-//});
