@@ -32,15 +32,13 @@ app.factory('Auth', ['$firebase', '$firebaseAuth', '$rootScope', function($fireb
     },
 
     createProfile: function(user) {
-      console.log("createProfile");
-      console.log(user);
       var profile = {
-        userEmail: user.password.email
+        userEmail: Auth.user.password.email
       };
 
       var profileRef = $firebase(ref.child('profile'));
       console.log(user);
-      return profileRef.$set(user.uid, profile);
+      return profileRef.$set(Auth.user.uid, profile);
     },
     user: {}
   };
@@ -55,7 +53,7 @@ app.factory('Auth', ['$firebase', '$firebaseAuth', '$rootScope', function($fireb
       Auth.user.profile = $firebase(ref.child('profile').child(Auth.user.uid)).$asObject();
       console.log(Auth.user);
     } else {
-
+    // user is logged out -- destroy dession.
       if(Auth.user && Auth.user.profile) {
         Auth.user.profile.$destroy();
       }

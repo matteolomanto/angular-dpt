@@ -30,6 +30,10 @@ app.controller("AuthCtrl", ["$scope", "$location", "Auth", "user", function($sco
 
     }).then(function(authData) {
       console.log("Logged in as: " + authData.uid);
+      console.log(authData);
+      return Auth.createProfile($scope.user); // create a profile w/ our user
+
+    }).then(function() {
       $location.path('/measurements');
 
     }).catch(function(error) {
@@ -38,3 +42,4 @@ app.controller("AuthCtrl", ["$scope", "$location", "Auth", "user", function($sco
   };
 
 }]);
+
