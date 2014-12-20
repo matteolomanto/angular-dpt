@@ -2,8 +2,8 @@
 /**
  * Created by a545703 on 12/10/14.
  */
-app.factory('Auth', ['$firebase', '$firebaseAuth', '$rootScope', function($firebase, $firebaseAuth, $rootScope){
-  var ref = new Firebase('https://durbrow-performance.firebaseio.com');
+app.factory('Auth', ['$firebase', '$firebaseAuth', 'FIREBASE_URL', '$rootScope', function($firebase, $firebaseAuth, FIREBASE_URL, $rootScope){
+  var ref = new Firebase(FIREBASE_URL);
   var authObject = $firebaseAuth(ref);
 
 
