@@ -1,16 +1,20 @@
 /**
- * Created by a545703 on 12/18/14.
+ * Created by dloure on 12/19/14.
  */
 'use strict';
 
-app.factory('Profile', function($window, $firebase, Measurement, $q ) {
-  var ref = new Firebase('https://durbrow-performance.firebaseio.com');
+app.controller('ProfileCtrl', function($scope, $routeParams, Profile) {
+  var uid = $routeParams.userId;
 
-  var Profile = {
-    get: function(userId) {
-      return $firebase(ref.child('profile').child(userId)).$asObject();
-    }
+  $scope.profile = Profile.get(uid);
+  console.log($scope.profile);
+  Profile.getMeasurements(uid).then(function(measurements){
+    $scope.measurements = measurements;
+  });
+
+  $scope.saveProfile = function(){
+
+    console.log('first name: ' + $scope.user.firstName);
+    console.log('last name: ' + $scope.user.lastName);
   };
-
-  return Profile;
 });

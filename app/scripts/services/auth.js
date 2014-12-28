@@ -37,7 +37,6 @@ app.factory('Auth', ['$firebase', '$firebaseAuth', 'FIREBASE_URL', '$rootScope',
       };
 
       var profileRef = $firebase(ref.child('profile'));
-      console.log(user);
       return profileRef.$set(Auth.user.uid, profile);
     },
     user: {}
