@@ -16,7 +16,6 @@ app.controller("AuthCtrl", ["$scope", "$location", "Auth", "user", function($sco
     Auth.login($scope.user).then(function(authData){
       console.log("Logged in as:", authData.uid);
       $location.path('/');
-
     }, function(error){
       $scope.error = error.toString();
     });

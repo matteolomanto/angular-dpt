@@ -33,7 +33,8 @@ app.factory('Auth', ['$firebase', '$firebaseAuth', 'FIREBASE_URL', '$rootScope',
 
     createProfile: function(user) {
       var profile = {
-        userEmail: Auth.user.password.email
+        firstName: user.firstName,
+        lastName: user.lastName
       };
 
       var profileRef = $firebase(ref.child('profile'));
@@ -49,6 +50,7 @@ app.factory('Auth', ['$firebase', '$firebaseAuth', 'FIREBASE_URL', '$rootScope',
     if (authData) {
       console.log('authData available: user is logged in');
       angular.copy(authData, Auth.user);
+      // $asObject downloads the data into the local object
       Auth.user.profile = $firebase(ref.child('profile').child(Auth.user.uid)).$asObject();
       console.log(Auth.user);
     } else {

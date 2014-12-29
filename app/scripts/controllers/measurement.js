@@ -3,8 +3,8 @@
  */
 'use strict';
 
-app.controller('MeasurementController', function ($scope, Measurement) {
-  $scope.measurements = [{
+app.controller('MeasurementController', function ($scope, Measurement, Auth) {
+  $scope.measurements = Measurement.all || [{
     "FirstName": "John",
     "LastName": "Will",
     "Date": "7/4/2005",
@@ -63,14 +63,20 @@ app.controller('MeasurementController', function ($scope, Measurement) {
   };
 
   $scope.create = function() {
-    $scope.measurements.push($scope.newMeasurement);
+    $scope.newMeasurement.creator = Auth.user.uid;
+    console.log($scope.newMeasurement.creator);
+    Measurement.create($scope.newMeasurement).then(function(){
+      $scope.newMeasurement = {FirstName: "", LastName: ""};
+    });
+    //$scope.measurements.push($scope.newMeasurement);
   };
 
   $scope.edit = function(measurement) {
     $scope.activeMeasurement = measurement;
   };
 
-  $scope.update = function(measurement) {
+  $scope.update = function(activeMeasurement) {
+    Measurement.update(activeMeasurement);
     $scope.activeMeasurement = null;
   };
 

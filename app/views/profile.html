@@ -1,12 +1,5 @@
-<div class="container profile" ng-controller="ProfileCtrl">
-  <h1>Create Profile</h1>
-  <div class="row">
-    <form ng-submit="saveProfile()">
-      <input type="text" ng-model="user.firstName" placeholder="First Name" class="form-control"/><br/>
-      <input type="text" ng-model="user.lastName" placeholder="Last Name" class="form-control"/><br/>
-      <input type="submit" value="Save Profile" class="btn btn-primary"/>
-    </form>
-  </div>
+<div class="profile" ng-controller="ProfileCtrl">
+  <h1>{{ profile.firstName }} {{ profile.lastName}}</h1>
 </div>
 
 

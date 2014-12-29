@@ -1,0 +1,9 @@
+{
+  "firebase": "durbrow-performance",
+  "public": "app",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
