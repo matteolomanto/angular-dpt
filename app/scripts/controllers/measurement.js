@@ -7,8 +7,17 @@ app.controller('MeasurementController', function ($scope, Measurement, Auth) {
   $scope.measurements = Measurement.all;
 
   $scope.create = function() {
+    console.log($scope.newMeasurement);
+
+    // TODO: use Angular-Moment: https://github.com/urish/angular-moment/issues
+    var now =  new Date;
+    $scope.newMeasurement.DateEntered = ($scope.newMeasurement.Date) ? $scope.newMeasurement.Date.getTime() : now.getTime();
+    console.log($scope.newMeasurement);
+
+
+    $scope.newMeasurement.FirstName = $scope.newMeasurement.FirstName || Auth.user.profile.firstName;
+    $scope.newMeasurement.LastName = $scope.newMeasurement.LastName || Auth.user.profile.lastName;
     $scope.newMeasurement.creatorUID = Auth.user.uid;
-    $scope.newMeasurement.creator = Auth.user.profile.firstName + ' ' + Auth.user.profile.lastName;
 
     Measurement.create($scope.newMeasurement).then(function(){
       $scope.newMeasurement = {FirstName: "", LastName: "", BF: ""};

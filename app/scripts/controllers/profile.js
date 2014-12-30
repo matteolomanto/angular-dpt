@@ -10,9 +10,6 @@ app.controller('ProfileCtrl', function($scope, $routeParams, Profile) {
   $scope.profile = Profile.get(uid);
   Profile.getMeasurements(uid).then(function(measurements){
     $scope.measurements = measurements;
-
-
-
   });
 
 });
