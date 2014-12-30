@@ -8,7 +8,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li ng-show="signedIn()">
         <a ng-href="#/users/{{ user.profile.$id }}">
-          {{ user.password.email }}
+          My Profile ({{ user.password.email }} )
         </a>
       </li>
       <li ng-hide="signedIn()">
@@ -18,7 +18,7 @@
         <a href="#/register">Register</a>
       </li>
       <li ng-show="signedIn()">
-        <a href="#/measurements">Measurements</a>
+        <a href="#/measurements">All Measurements</a>
       </li>
       <li ng-show="signedIn()">
         <a href="#" ng-click="logout()">Logout</a>

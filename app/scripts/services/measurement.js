@@ -7,7 +7,26 @@ app.factory('Measurement', function($firebase, FIREBASE_URL) {
   var Measurement = {
     all: measurements,
     create: function(measurement) {
-      return measurements.$add(measurement);
+
+      // add measurement to the measurement 'table' (child) in
+      // firebase.
+      return measurements.$add(measurement)
+
+        // then add it to user_measurements, so we can
+        // easily query which measurements belong to a specific user
+        .then(function(measurementRef){
+
+          // 1. create 'user_measurements'
+          $firebase(ref.child('user_measurements')
+
+            // 2. create a child with the user's simpleloginid
+            .child(measurement.creatorUID))
+
+            // 3. add the key here that corresponds to the most in the main
+            // measurements table.
+            .$push(measurementRef.key());
+
+        });
     },
     get: function (measurementId) {
       return $firebase(ref.child('measurements').child(measurementId)).$asObject();

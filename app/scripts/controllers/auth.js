@@ -6,8 +6,7 @@
 app.controller("AuthCtrl", ["$scope", "$location", "Auth", "user", function($scope, $location, Auth, user){
 
   if (user) {
-    //console.log("AuthCtrl: user exists -- redirect to homepage");
-    //$location.path('/');
+    $location.path('/');
   }
 
   $scope.login = function(loginObj) {
