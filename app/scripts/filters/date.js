@@ -5,5 +5,6 @@ app.filter('formatDate', function() {
   return function(time) {
     var filteredDate =  new Date(time);
     return filteredDate.toString();
+    // testing
   }
 })
