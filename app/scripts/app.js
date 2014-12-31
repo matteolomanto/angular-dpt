@@ -21,6 +21,8 @@
     'app.measurements.ctrls',
     'app.exercises.ctrls',
     'app.page.ctrls',
+    'app.auth',
+    'app.auth.ctrls',
     'firebase'
   ])
     .constant('FIREBASE_URL', 'https://durbrow-performance.firebaseio.com/')
@@ -32,9 +34,20 @@
         templateUrl: 'views/dashboard.html'
       }).when('/pages/measurements', {
         templateUrl: 'views/pages/measurements.html'
-      }).when('/pages/signin', {
-        templateUrl: 'views/pages/signin.html'
-      }).when('/pages/signup', {
+      })
+
+      .when('/pages/signin', {
+          templateUrl: 'views/pages/signin.html',
+          controller: 'AuthCtrl',
+          resolve: {
+            user: function(Auth) {
+              return Auth.resolveUser();
+            }
+          }
+
+      })
+
+        .when('/pages/signup', {
         templateUrl: 'views/pages/signup.html'
       }).when('/pages/forgot', {
         templateUrl: 'views/pages/forgot-password.html'
