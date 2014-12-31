@@ -1,4 +1,4 @@
-<header class="clearfix">
+<header class="clearfix" ng-controller="NavCtrl">
 
     <!-- Logo -->
     <div class="logo">
@@ -59,7 +59,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#/pages/signin">
+                        <a href="#" ng-click="logout()">
                             <i class="fa fa-sign-out"></i>
                             <span">Log Out</span>
                         </a>

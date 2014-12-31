@@ -23,6 +23,7 @@
     'app.page.ctrls',
     'app.auth',
     'app.auth.ctrls',
+    'app.nav.ctrls',
     'firebase'
   ])
     .constant('FIREBASE_URL', 'https://durbrow-performance.firebaseio.com/')
