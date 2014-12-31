@@ -20,7 +20,6 @@
     'app.task',
     'app.measurements.ctrls',
     'app.exercises.ctrls',
-    'app.page.ctrls',
     'app.auth',
     'app.auth.ctrls',
     'app.nav.ctrls',
