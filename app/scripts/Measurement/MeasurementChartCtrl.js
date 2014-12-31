@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('app.measurements.ctrls', ['highcharts-ng']).controller('MeasurementsCtrl', [
+  angular.module('app.measurement.ctrls', ['highcharts-ng']).controller('MeasurementChartCtrl', [
     '$scope', function($scope) {
 
 
