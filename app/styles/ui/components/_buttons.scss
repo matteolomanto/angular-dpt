@@ -458,6 +458,13 @@ $btn_arrow_width:     8px;
 
   width: 100%;
   font-family: "Dosis";
+  height: 140px;
 
+  i {
+    line-height: 125px;
+  }
 
+  span {
+    left: 25px;
+  }
 }
