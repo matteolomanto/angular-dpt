@@ -417,14 +417,16 @@ $btn_arrow_width:     8px;
     text-align: center;
 
     i {
-        font-size: 48px;
-        line-height: 180px;
+      font-size: 40px;
+      margin-top: 35px;
+      display: block;
     }
 
     span {
-        position: absolute;
-        left: 47px;
-        bottom: 15px;
+      display: block;
+      text-transform: uppercase;
+      font-size: 75%;
+      margin-top: 15px;
     }
 
     &.orange {
@@ -460,11 +462,4 @@ $btn_arrow_width:     8px;
   font-family: "Dosis";
   height: 140px;
 
-  i {
-    line-height: 125px;
-  }
-
-  span {
-    left: 25px;
-  }
 }
