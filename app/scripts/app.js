@@ -18,7 +18,8 @@ var app = angular
     'ngSanitize',
     'ngTouch',
     'angular-c3',
-    'firebase'
+    'firebase',
+    'angularMoment'
   ])
   .constant('FIREBASE_URL', 'https://durbrow-performance.firebaseio.com/')
   .config(function ($routeProvider) {

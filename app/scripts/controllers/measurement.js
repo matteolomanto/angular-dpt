@@ -11,7 +11,7 @@ app.controller('MeasurementController', function ($scope, Measurement, Auth) {
 
     // TODO: use Angular-Moment: https://github.com/urish/angular-moment/issues
     var now =  new Date;
-    $scope.newMeasurement.DateEntered = ($scope.newMeasurement.Date) ? $scope.newMeasurement.Date.getTime() : now.getTime();
+    $scope.newMeasurement.DateEntered = ($scope.newMeasurement.Date) ? $scope.newMeasurement.Date.toString() : now.toString();
     console.log($scope.newMeasurement);
 
 
